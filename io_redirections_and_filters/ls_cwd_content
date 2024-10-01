@@ -1,0 +1,17 @@
+total 60
+drwxr-xr-x 2 alan alan 4096 Oct  1 23:54 .
+drwxr-xr-x 6 alan alan 4096 Oct  1 21:51 ..
+-rwxr-xr-x 1 alan alan   30 Oct  1 22:06 0-hello_world
+-rwxr-xr-x 1 alan alan   28 Oct  1 22:59 1-confused_smiley
+-rwxr-xr-x 1 alan alan   28 Oct  1 23:14 2-hellofile
+-rwxr-xr-x 1 alan alan   39 Oct  1 23:12 3-twofiles
+-rwxr-xr-x 1 alan alan   29 Oct  1 23:17 4-lastlines
+-rwxr-xr-x 1 alan alan   29 Oct  1 23:19 5-firstlines
+-rwxr-xr-x 1 alan alan   38 Oct  1 23:28 6-third_line
+-rwxr-xr-x 1 alan alan   78 Oct  1 23:42 7-file
+-rwxr-xr-x 1 alan alan   36 Oct  1 23:54 8-cwd_state
+-rw-r--r-- 1 alan alan   35 Oct  1 21:57 README.md
+-rw-r--r-- 1 alan alan   38 Oct  1 23:38 \*\'Best
+-rw-r--r-- 1 alan alan   12 Oct  1 23:42 \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 alan alan  745 Oct  1 23:24 iacta
+-rw-r--r-- 1 alan alan    0 Oct  1 23:54 ls_cwd_content
