@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #checking if file school exists
 
-file="touch school"
+file="school"
 
 if [ -e "$file" ]; then
   echo "school file exists"
