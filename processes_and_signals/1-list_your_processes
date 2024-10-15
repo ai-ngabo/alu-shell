@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Listing all the processes
+ps -a -x -u -f
