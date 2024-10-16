@@ -2,25 +2,32 @@
 # Manages 'manage_my_process'
 
 PID_FILE="/var/run/my_process.pid"
+PROCESS_NAME="manage_my_process"
 
 start_process() {
-    ./manage_my_process &    
-    echo $! > $PID_FILE     
-    echo "manage_my_process started"
+    if [ -f "$PID_FILE" ]; then
+        echo "$PROCESS_NAME is already running."
+    else
+        ./$PROCESS_NAME &
+        echo $! > $PID_FILE
+        echo "$PROCESS_NAME started"
+    fi
 }
 
 stop_process() {
-    if [ -f "$PID_FILE" ]; then 
+    if [ -f "$PID_FILE" ]; then
         kill "$(cat $PID_FILE)"
         rm -f "$PID_FILE"
-        echo "manage_my_process stopped"
+        echo "$PROCESS_NAME stopped"
     else
         echo "No PID file found. Is the process running?"
     fi
 }
 
-restart_process() {                  
-    echo "manage_my_process restarted"
+restart_process() {
+    stop_process
+    start_process
+    echo "$PROCESS_NAME restarted"
 }
 
 case "$1" in
@@ -34,7 +41,8 @@ case "$1" in
         restart_process
         ;;
     *)
-        echo "Usage: manage_my_process {start|stop|restart}"
+        echo "Usage: $0 {start|stop|restart}"
         exit 1
         ;;
 esac
+
