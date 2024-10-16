@@ -1,20 +1,22 @@
 #!/usr/bin/env bash
 #managing the process
+
 #!/bin/bash
 
 PID_FILE="/var/run/my_process.pid"
+PROCESS_NAME="manage_my_process"
 
 start_process() {
-    ./manage_my_process &
+    ./$PROCESS_NAME &
     echo $! > $PID_FILE
-    echo "manage_my_process started"
+    echo "$PROCESS_NAME started"
 }
 
 stop_process() {
     if [ -f "$PID_FILE" ]; then
         kill "$(cat $PID_FILE)"
         rm -f "$PID_FILE"
-        echo "manage_my_process stopped"
+        echo "$PROCESS_NAME stopped"
     else
         echo "No PID file found. Is the process running?"
     fi
@@ -23,7 +25,7 @@ stop_process() {
 restart_process() {
     stop_process
     start_process
-    echo "manage_my_process restarted"
+    echo "$PROCESS_NAME restarted"
 }
 
 case "$1" in
